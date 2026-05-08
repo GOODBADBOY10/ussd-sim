@@ -1,0 +1,42 @@
+[package]
+name = "ussd-sim"
+version = "0.1.0"
+edition = "2024"
+
+
+[[bin]]
+name = "ussd-sim"
+path = "src/main.rs"
+
+[dependencies]
+# CLI
+clap = { version = "4", features = ["derive"] }
+
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# HTTP client
+reqwest = { version = "0.11", features = ["json"] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Error handling
+thiserror = "1"
+
+# Tracing/logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Unique session IDs
+uuid = { version = "1", features = ["v4"] }
+
+# Date/time for log file names
+chrono = "0.4"
+
+# Config file (TOML)
+toml = "0.8"
+
+# Home directory for config file path
+dirs = "5"
